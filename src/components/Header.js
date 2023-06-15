@@ -14,7 +14,6 @@ const HeaderWrapper = styled.header`
   justify-content: center;
   align-items: center;
   padding: 2em;
-  margin-bottom: 2em;
   background-color: black;
 `;
 
