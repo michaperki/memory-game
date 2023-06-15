@@ -11,26 +11,26 @@ const Scoreboard = ({ currentScore, bestScore }) => {
 
 const ScoreboardWrapper = styled.div`
   display: flex;
-  background-color: #b7e4f9ff;
+  background-color: black;
   justify-content: space-between;
-  width: 300px;
-  padding: 1em;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  box-shadow: 0px 5px 15px white;
+  margin-bottom: 2rem;
 `;
 
 const Score = styled.div`
-  font-weight: 500;
+  font-weight: 700;
   font-size: 32px;
+  padding: 1rem;
+  border-radius: 20px;
 `;
 
 const CurrScore = styled(Score)`
-  color: red;
+  background: red;
+  margin-right: 2rem;
 `;
 
 const BestScore = styled(Score)`
-  color: green;
+  background: green;
+  margin-left: 2rem;
 `;
 
 export default Scoreboard;

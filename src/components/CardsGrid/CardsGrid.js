@@ -11,7 +11,7 @@ const CardsGrid = ({ characters, handleCardClick }) => {
 
 const CardsGridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1em;
 `;
 
