@@ -8,6 +8,9 @@ import { shuffleArray } from "../utils";
 const Main = () => {
   const CHARACTER_COUNT = 12;
   const [characters, setCharacters] = useState([]);
+  const [clickedCharacters, setClickedCharacters] = useState([]);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   useEffect(() => {
     const loadCards = async () => {
@@ -29,9 +32,33 @@ const Main = () => {
     return characters;
   };
 
+  const handleCardClick = (e) => {
+    const character = e.target.parentNode.lastChild.innerText;
+    if (clickedCharacters.includes(character)) {
+      resetGame();
+    } else {
+      playRound(character);
+    }
+  };
+
+  const playRound = (clickedCharacter) => {
+    const newScore = currentScore + 1;
+    if (newScore > bestScore) {
+      setBestScore(newScore);
+    }
+    setCurrentScore(newScore);
+    setClickedCharacters((prevState) => [...prevState, clickedCharacter]);
+    setCharacters(shuffleArray(characters));
+  };
+
+  const resetGame = () => {
+    setCurrentScore(0);
+    setClickedCharacters([]);
+  };
+
   return (
     <MainWrapper>
-      <CardsGrid characters={characters} />
+      <CardsGrid characters={characters} handleCardClick={handleCardClick} />
     </MainWrapper>
   );
 };

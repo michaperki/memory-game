@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const CardsGrid = ({ characters, handleCardClick }) => {
   const cards = characters.map((character) => (
-    <Card key={character.id} character={character} handleCardClick={handleCardClick} />
+    <Card key={character.id} character={character} handleClick={handleCardClick} />
   ));
 
   return <CardsGridWrapper>{cards}</CardsGridWrapper>

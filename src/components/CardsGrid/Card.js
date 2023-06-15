@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Card = ({ character, handleClick }) => {
   return (
-    <CardWrapper>
+    <CardWrapper onClick={handleClick}>
       <img src={character.image} alt={character.name} />
       <p>{character.name}</p>
     </CardWrapper>
