@@ -1,7 +1,9 @@
+import Main from "./components/Main";
+
 function App() {
   return (
     <div>
-      Hello World
+      <Main />
     </div>
   );
 }
