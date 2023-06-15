@@ -4,6 +4,7 @@ import background from "../assets/background.png";
 import { getCharacter } from "rickmortyapi";
 import CardsGrid from "./CardsGrid";
 import { shuffleArray } from "../utils";
+import Scoreboard from "./Scoreboard";
 
 const Main = () => {
   const CHARACTER_COUNT = 12;
@@ -58,6 +59,7 @@ const Main = () => {
 
   return (
     <MainWrapper>
+      <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       <CardsGrid characters={characters} handleCardClick={handleCardClick} />
     </MainWrapper>
   );
@@ -65,6 +67,7 @@ const Main = () => {
 
 const MainWrapper = styled.main`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2em;
