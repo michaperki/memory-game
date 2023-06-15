@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/memory-game/static/js/main.fc9592bf.js",
+    "main.js": "/memory-game/static/js/main.3548538d.js",
     "index.html": "/memory-game/index.html",
-    "main.fc9592bf.js.map": "/memory-game/static/js/main.fc9592bf.js.map"
+    "main.3548538d.js.map": "/memory-game/static/js/main.3548538d.js.map"
   },
   "entrypoints": [
-    "static/js/main.fc9592bf.js"
+    "static/js/main.3548538d.js"
   ]
 }
