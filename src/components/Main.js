@@ -11,7 +11,6 @@ const MainWrapper = styled.main`
   justify-content: center;
   align-items: center;
   padding: 2em;
-  margin-bottom: 2em;
   height: 90vh;
   background-image: url(${background});
   background-size: cover;
