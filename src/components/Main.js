@@ -3,11 +3,14 @@ import styled from "styled-components";
 import background from "../assets/background.png";
 import { getCharacter } from "rickmortyapi";
 import CardsGrid from "./CardsGrid";
-import { shuffleArray } from "../utils";
+import { generateArrayOfRandomNumbers, shuffleArray } from "../utils";
 import Scoreboard from "./Scoreboard";
 
 const Main = () => {
   const CHARACTER_COUNT = 12;
+  const TOTAL_API_CHARACTERS = 826;
+  const RANDOM_SELECTION = generateArrayOfRandomNumbers(CHARACTER_COUNT, TOTAL_API_CHARACTERS);
+  const [randomNumArray, setRandomNumArray] = useState(RANDOM_SELECTION)
   const [characters, setCharacters] = useState([]);
   const [clickedCharacters, setClickedCharacters] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
@@ -24,8 +27,8 @@ const Main = () => {
   const fetchCharacters = async (count) => {
     const characters = [];
 
-    for (let i = 1; i <= count; i++) {
-      const character = await getCharacter(i);
+    for (let i = 0; i < count; i++) {
+      const character = await getCharacter(randomNumArray[i]);
       const { name, image, id } = character.data;
       characters.push({ name, image, id });
     }
